@@ -1,0 +1,90 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100,
+      "isDeleted": false
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200,
+      "isDeleted": false
+    },
+    {
+      "id": "3",
+      "title": "another titlee",
+      "views": 300,
+      "isDeleted": false
+    },
+    {
+      "id": "4",
+      "title": "haha",
+      "views": 700,
+      "isDeleted": false
+    },
+    {
+      "id": "5",
+      "title": "hohio",
+      "views": "900",
+      "isDeleted": false
+    },
+    {
+      "title": "Ngao",
+      "views": "3-2",
+      "id": "7",
+      "isDeleted": false
+    },
+    {
+      "title": "Mu",
+      "views": "1000",
+      "id": "10",
+      "isDeleted": false
+    },
+    {
+      "id": "11",
+      "title": "jhfdkj",
+      "views": "23",
+      "isDeleted": false
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1",
+      "isDeleted": false
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1",
+      "isDeleted": false
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "mod",
+      "password": "mod123",
+      "role": "mod"
+    },
+    {
+      "id": 3,
+      "username": "user",
+      "password": "user123",
+      "role": "user"
+    }
+  ]
+}

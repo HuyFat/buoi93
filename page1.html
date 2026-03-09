@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts & Comments Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        /* Gạch ngang cho các post bị xoá mềm */
+        tr.deleted-post {
+            opacity: 0.6;
+            background-color: #ffebee;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .table-section {
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Quản Lý Bài Viết và Bình Luận</h1>
+
+    <div class="form-section" id="auth-section">
+        <h2>Đăng nhập</h2>
+        <div>
+            <label>Username:</label>
+            <input type="text" id="username_txt" placeholder="Username" />
+            <label>Password:</label>
+            <input type="password" id="password_txt" placeholder="Password" />
+            <input type="submit" value="Đăng nhập" onclick="login()" />
+            <input type="submit" value="Đăng xuất" onclick="logout()" />
+            <div id="auth-status" style="margin-top: 10px; color: #333;"></div>
+        </div>
+    </div>
+
+    <div class="form-section" id="change-password-section" style="display: none;">
+        <h2>Đổi mật khẩu</h2>
+        <div>
+            <label>Old password:</label>
+            <input type="password" id="oldpassword_txt" placeholder="Old password" />
+            <label>New password:</label>
+            <input type="password" id="newpassword_txt" placeholder="New password" />
+            <input type="submit" value="Đổi mật khẩu" onclick="changePassword()" />
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h2>Danh Sách Bài Viết</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tiêu Đề</th>
+                    <th>Views</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="form-section">
+        <h2>Tạo/Chỉnh Sửa Bài Viết</h2>
+        <div>
+            <label>ID (để trống để tạo mới):</label>
+            <input type="text" id="id_txt" placeholder="Để trống để tự động tăng"/>
+            
+            <label>Tiêu Đề:</label>
+            <input type="text" id="title_txt" placeholder="Nhập tiêu đề"/>
+            
+            <label>Views:</label>
+            <input type="text" id="views_txt" placeholder="Nhập số lượt xem"/>
+            
+            <input type="submit" value="Lưu" onclick="Save()"/>
+        </div>
+    </div>
+</body>
+</html>
